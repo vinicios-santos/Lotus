@@ -1,0 +1,10 @@
+body {
+    background-image: url('./imgs/fundo3.png'); /* Caminho da imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Garante que o corpo ocupe toda a altura da viewport */
+}
