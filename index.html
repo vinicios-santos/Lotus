@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,11 @@
             background: url('./imgs/lpromo_gen15_40.png') no-repeat center center/cover;
             /* background: rgb(245,209,219); */
             /* background: linear-gradient(180deg, #000 0%, #111 35%, #222 100%); */
-            min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+            min-height: 100vh;
+            /* Garante que o body ocupe toda a altura da tela */
             background-attachment: fixed;
         }
+
         header {
             background: url('./imgs/lotus\ fundo.png') no-repeat center center/cover;
             text-align: center;
@@ -36,26 +39,31 @@
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 15px;
         }
+
         .news-item {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            overflow: hidden; /* Para garantir que a imagem não ultrapasse os limites */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /* Para garantir que a imagem não ultrapasse os limites */
         }
+
         .news-item img {
-            border-radius: 8px;
-            max-width: 400px;
-            min-width: 400px;
-            object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorção */
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+            /* Ajusta a imagem para cobrir o espaço sem distorção */
             aspect-ratio: 4 / 2
         }
+
         .news-item h2 {
             font-size: 22px;
             margin: 10px 0;
             font-weight: bold;
             color: #333;
         }
+
         .news-item a {
             display: block;
             margin-top: 10px;
@@ -63,6 +71,7 @@
             text-decoration: none;
             font-weight: bold;
         }
+
         nav {
             background: #0e0e27;
             text-align: center;
@@ -72,6 +81,7 @@
             gap: 50px;
             flex-wrap: wrap;
         }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -81,100 +91,112 @@
             display: flex;
             align-items: center;
         }
+
         nav a img {
-            max-width: 30px; /* Tamanho do ícone */
+            max-width: 30px;
+            /* Tamanho do ícone */
             max-height: 30px;
-            margin-right: 10px; /* Espaço entre o ícone e o texto */
+            margin-right: 10px;
+            /* Espaço entre o ícone e o texto */
         }
+
         nav a:hover {
             text-decoration: underline;
         }
+
         @media (max-width: 600px) {
             .container {
                 grid-template-columns: 1fr;
             }
+
             nav {
                 flex-direction: column;
                 align-items: center;
             }
+
             nav a {
                 padding: 10px;
             }
         }
+
         .news-item p {
             margin: 0;
             color: #777;
             font-size: 14px;
         }
-        .backgroundgrid { 
+
+        .backgroundgrid {
             padding: 10px;
             background-color: #ffff;
-            border-radius: 10px;
+            border-radius: 20px;
             width: 90%;
             max-width: 1500px;
             margin: 20px auto;
         }
+
         footer {
             text-align: center;
             color: #fff;
             margin: 30px;
         }
+
         .featured-news {
-        position: relative;
-        width: 95%;
-        max-width: 1200px;
-        height: 300px;
-        margin: 20px auto;
-        border-radius: 10px;
-        overflow: hidden;
-        background: url('./imgs/Article_carnival.gif') no-repeat center center/cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+            position: relative;
+            width: 95%;
+            max-width: 1200px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            background: url('./imgs/Article_carnival.gif') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .featured-news-overlay {
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        text-align: center;
-        padding: 20px;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+        .featured-news-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    .featured-news h2 {
-        font-size: 26px;
-        margin: 10px 0;
-    }
+        .featured-news h2 {
+            font-size: 26px;
+            margin: 10px 0;
+        }
 
-    .featured-news p {
-        font-size: 18px;
-        margin: 10px 0;
-    }
+        .featured-news p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
 
-    .featured-news a {
-        color: #FFD700;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 18px;
-        margin-top: 10px;
-    }
+        .featured-news a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+        }
 
-    .featured-news a:hover {
-        text-decoration: underline;
-    }
+        .featured-news a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <img src="./imgs/Valentines Day (9).png" alt="LotusHabbo Logo">
     </header>
     <nav>
         <a href="index.html"><img src="./imgs/LOTUS (1).png" alt="Ícone Home">Home</a>
-        <a href="sobre.html"><img src="./imgs/438__-3jL.png"  alt="Ícone Sobre">Sobre Nós</a>
+        <a href="sobre.html"><img src="./imgs/438__-3jL.png" alt="Ícone Sobre">Sobre Nós</a>
     </nav>
     <div class="featured-news">
         <div class="featured-news-overlay">
@@ -186,43 +208,61 @@
     <div class="backgroundgrid">
         <div class="container">
             <div class="news-item">
-                <img src="/imgs/head-fundo.png" alt="Competição Old School">
-                <h2>Resultado competição de quartos old school</h2>
-                <p>Competição no estilo old school clássico com mobis de época vivendo a nostalgia do habbo antigo.</p>
-                <a href="noticia2.html">Leia mais</a>
+                <a href="noticia2.html">
+                    <img src="/imgs/head-fundo.png" alt="Competição Old School" href="noticia2.html">
+                    <h2>Resultado competição de quartos old school</h2>
+                    <p>Competição no estilo old school clássico com mobis de época vivendo a nostalgia do habbo antigo.
+                    </p>
+                    <a href="noticia2.html">Leia mais</a>
+                </a>
             </div>
             <div class="news-item">
-                <img src="./imgs/capa-castelo-amor.png" alt="Ranking dos Melhores Jogadores">
-                <h2>Resultado competição de quartos castelo do amor</h2>
-                <p>Competição de quartos no tema castelo do amor para celebrar feveiro o mes do Valentines Day</p>
-                <a href="noticia3.html">Leia mais</a>
+                <a href="noticia3.html">
+                    <img src="./imgs/capa-castelo-amor.png" alt="Ranking dos Melhores Jogadores" href="noticia2.html">
+                    <h2>Resultado competição de quartos castelo do amor</h2>
+                    <p>Competição de quartos no tema castelo do amor para celebrar feveiro o mes do Valentines Day</p>
+                    <a href="noticia3.html">Leia mais</a>
+                </a>
+            </div>
+            <div class="news-item" href="noticia3.html">
+                <a href="noticia2.html">
+                    <img src="./imgs/rasta-songs.png" alt="Ranking dos Melhores Jogadores" href="noticia2.html">
+                    <h2>Rasta songs</h2>
+                    <p>Já pensou em ter sua música favorita tocando no seu quarto? entre em contato com rastafari para
+                        saber
+                        mais.</p>
+                    <a href="noticia3.html">Leia mais</a>
+                </a>
             </div>
             <div class="news-item">
-                <img src="./imgs/rasta-songs.png" alt="Ranking dos Melhores Jogadores">
-                <h2>Rasta songs</h2>
-                <p>Já pensou em ter sua música favorita tocando no seu quarto? entre em contato com rastafari para saber mais.</p>
-                <a href="noticia3.html">Leia mais</a>
+                <a href="noticia3.html">
+                    <img src="./imgs/orig_pic.852d257e.png" alt="Ranking dos Melhores Jogadores" href="noticia2.html">
+                    <h2>Não entre em links suspeitos</h2>
+                    <p>Nâo vai querer dar mole e deixar seus dados expostos por ai hein, não clique em nada.</p>
+                    <a href="noticia3.html">Leia mais</a>
+                </a>
             </div>
             <div class="news-item">
-                <img src="./imgs/orig_pic.852d257e.png" alt="Ranking dos Melhores Jogadores">
-                <h2>Não entre em links suspeitos</h2>
-                <p>Nâo vai querer dar mole e deixar seus dados expostos por ai hein, não clique em nada.</p>
-                <a href="noticia3.html">Leia mais</a>
+                <a href="noticia3.html">
+                    <img src="./imgs/upador-habbo.png" alt="Ranking dos Melhores Jogadores" href="noticia2.html">
+                    <h2>Upador habbo</h2>
+                    <p>Upe seus emblemas desse modo rapido e facil, freeze banzai cavalo gol skate patins esqui.</p>
+                    <a href="noticia3.html">Leia mais</a>
+                </a>
             </div>
             <div class="news-item">
-                <img src="./imgs/upador-habbo.png" alt="Ranking dos Melhores Jogadores">
-                <h2>Upador habbo</h2>
-                <p>Upe seus emblemas desse modo rapido e facil, freeze banzai cavalo gol skate patins esqui.</p>
-                <a href="noticia3.html">Leia mais</a>
-            </div>
-            <div class="news-item">
-                <img src="./imgs/08a98d4e5f854cc18879b7b94dd63635.jpg.jpg" alt="Ranking dos Melhores Jogadores">
-                <h2>Se junte a comunidade lotus</h2>
-                <p>Se junte a maior comunidade do habbo hotel, lotus habbo, competição de quartos, festas e muita alegria.</p>
-                <a href="noticia3.html">Leia mais</a>
+                <a href="noticia2.html">
+                    <img src="./imgs/08a98d4e5f854cc18879b7b94dd63635.jpg.jpg" alt="Ranking dos Melhores Jogadores"
+                        href="noticia2.html">
+                    <h2>Se junte a comunidade lotus</h2>
+                    <p>Se junte a maior comunidade do habbo hotel, lotus habbo, competição de quartos, festas e muita
+                        alegria.</p>
+                    <a href="noticia3.html">Leia mais</a>
+                </a>
             </div>
         </div>
     </div>
     <footer>Copyright © 2025 Lótus Habbo</footer>
 </body>
+
 </html>
