@@ -9,7 +9,7 @@ export default function Home() {
     <Layout withBackground>
       <Head>
         <title>Fundo Lotus - Página Inicial</title>
-        <meta name="description" content="Bem-vindo ao Fundo Lotus" />
+        <meta name="description" content="Bem-vindo a Lotus Habbo" />
       </Head>
 
       <div className={styles.container}>
