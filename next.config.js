@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  trailingSlash: true,
   images: {
     domains: [
       'images.habbo.com',
@@ -9,6 +10,15 @@ const nextConfig = {
       'i.ibb.co',
       'ibb.co'
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ]
   },
 }
 
