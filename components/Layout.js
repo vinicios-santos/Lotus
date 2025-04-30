@@ -21,7 +21,7 @@ export default function Layout({ children, title = 'Fundo Lotus' }) {
         </main>
 
         <footer className={styles.footer}>
-          <p>© {new Date().getFullYear()} Fundo Lotus. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Lotus Habbo. Todos os direitos reservados.</p>
         </footer>
       </div>
     </>

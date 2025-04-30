@@ -1,7 +1,33 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import dynamic from 'next/dynamic';
 import styles from '../../styles/Admin.module.css';
+import 'react-quill/dist/quill.snow.css';
+
+// Importação dinâmica do React-Quill para evitar erros de SSR
+const ReactQuill = dynamic(() => import('react-quill'), {
+  ssr: false,
+  loading: () => <p>Carregando editor...</p>,
+});
+
+// Configurações do editor
+const modules = {
+  toolbar: [
+    [{ 'header': [1, 2, false] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+    ['link', 'image'],
+    ['clean']
+  ],
+};
+
+const formats = [
+  'header',
+  'bold', 'italic', 'underline', 'strike', 'blockquote',
+  'list', 'bullet', 'indent',
+  'link', 'image'
+];
 
 export default function AdminNews() {
   const [title, setTitle] = useState('');
@@ -35,6 +61,7 @@ export default function AdminNews() {
         .order('created_at', { ascending: false });
 
       if (error) throw error;
+      console.log('News data structure:', data && data[0]);
       setNewsItems(data || []);
     } catch (error) {
       setError('Erro ao carregar notícias');
@@ -54,7 +81,11 @@ export default function AdminNews() {
         // Atualizar notícia existente
         const { error } = await supabase
           .from('news')
-          .update({ title, content, image_url: imageUrl })
+          .update({ 
+            title, 
+            description: content,
+            image_url: imageUrl 
+          })
           .eq('id', editingId);
 
         if (error) throw error;
@@ -62,7 +93,11 @@ export default function AdminNews() {
         // Criar nova notícia
         const { error } = await supabase
           .from('news')
-          .insert([{ title, content, image_url: imageUrl }]);
+          .insert([{ 
+            title, 
+            description: content,
+            image_url: imageUrl 
+          }]);
 
         if (error) throw error;
       }
@@ -101,7 +136,7 @@ export default function AdminNews() {
   function handleEdit(news) {
     setEditingId(news.id);
     setTitle(news.title);
-    setContent(news.content);
+    setContent(news.description || '');
     setImageUrl(news.image_url || '');
   }
 
@@ -138,12 +173,13 @@ export default function AdminNews() {
 
         <div className={styles.formGroup}>
           <label className={styles.formLabel}>Conteúdo:</label>
-          <textarea
+          <ReactQuill
+            theme="snow"
             value={content}
-            onChange={(e) => setContent(e.target.value)}
-            required
-            className={styles.formInput}
-            rows="5"
+            onChange={setContent}
+            modules={modules}
+            formats={formats}
+            className={styles.editor}
           />
         </div>
 
